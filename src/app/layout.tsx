@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}> {/* Apply Inter font class to html */}
+    <html lang="en" suppressHydrationWarning className={inter.className}>
       <head>
         {/* Removed Google Fonts direct link as we are using next/font */}
       </head>
