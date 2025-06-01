@@ -11,19 +11,19 @@ export const metadata = {
 const services = [
   {
     title: "Script Writing",
-    imageUrl: "https://placehold.co/600x450.png",
+    imageUrl: "https://placehold.co/800x600.png",
     icon: PenTool,
     imageHint: "typewriter script",
   },
   {
     title: "Making video content",
-    imageUrl: "https://placehold.co/600x450.png",
+    imageUrl: "https://placehold.co/800x600.png",
     icon: Clapperboard,
     imageHint: "camera clapperboard",
   },
   {
     title: "Post Production",
-    imageUrl: "https://placehold.co/600x450.png",
+    imageUrl: "https://placehold.co/800x600.png",
     icon: Wand2,
     imageHint: "editing computer",
   },
