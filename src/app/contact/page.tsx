@@ -6,8 +6,8 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Contact Me - Oomkar Anil Panchal',
-  description: 'Get in touch with Oomkar Anil Panchal to discuss your video project or inquiry.',
+  title: 'Contact Us - Gulmohar Production',
+  description: 'Get in touch with Gulmohar Production to discuss your video project or inquiry.',
 };
 
 export default function ContactPage() {
@@ -18,7 +18,7 @@ export default function ContactPage() {
           Get In Touch
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Have a project in mind or just want to say hello? I&apos;d love to hear from you.
+          Have a project in mind or just want to say hello? We&apos;d love to hear from you.
         </p>
       </header>
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
         <div className="lg:col-span-2">
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-headline">Send Me a Message</CardTitle>
+              <CardTitle className="text-2xl font-headline">Send Us a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <ContactForm />
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-xl font-headline">Connect With Me</CardTitle>
+              <CardTitle className="text-xl font-headline">Connect With Us</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex space-x-4">

@@ -33,7 +33,7 @@ export default function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <FilmIcon className="h-7 w-7 text-primary" />
           <span className="text-xl font-bold sm:inline-block font-headline">
-            Oomkar Anil Panchal
+            Gulmohar Production
           </span>
         </Link>
         
@@ -65,7 +65,7 @@ export default function Header() {
               <div className="flex flex-col space-y-4 p-6">
                 <Link href="/" className="flex items-center space-x-2 mb-4">
                   <FilmIcon className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline">Oomkar Anil Panchal</span>
+                  <span className="font-bold font-headline">Gulmohar Production</span>
                 </Link>
                 {NAV_ITEMS.map((item) => (
                   <Link

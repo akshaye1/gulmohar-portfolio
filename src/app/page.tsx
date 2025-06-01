@@ -7,8 +7,8 @@ import { projects } from '@/lib/data';
 import { ArrowRight, PlayCircle, Film } from 'lucide-react';
 
 export const metadata = {
-  title: 'Oomkar Anil Panchal - Video Editor & Motion Graphics Designer',
-  description: 'Creative portfolio of Oomkar Anil Panchal, showcasing expertise in video editing, motion graphics, and visual storytelling.',
+  title: 'Gulmohar Production - Creative Visuals & Storytelling',
+  description: 'Creative portfolio of Gulmohar Production, showcasing expertise in video editing, motion graphics, and visual storytelling.',
 };
 
 export default function HomePage() {
@@ -32,7 +32,7 @@ export default function HomePage() {
             className="text-5xl md:text-7xl font-bold font-headline text-white leading-tight animate-fadeInUp"
             style={{ animationDelay: '0.2s' }}
           >
-            Oomkar Anil Panchal
+            Gulmohar Production
           </h1>
           <p 
             className="text-xl md:text-2xl text-slate-200/90 animate-fadeInUp"
@@ -46,7 +46,7 @@ export default function HomePage() {
           >
             <Button size="lg" asChild className="bg-primary hover:bg-primary/80 text-primary-foreground shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300">
               <Link href="/work">
-                View My Work <ArrowRight className="ml-2 h-5 w-5" />
+                View Our Work <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10 hover:text-white shadow-md hover:shadow-white/30 transform hover:scale-105 transition-all duration-300">
@@ -87,11 +87,11 @@ export default function HomePage() {
             Ready to Start Your Next Project?
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Let&apos;s collaborate to create something truly exceptional. Reach out to discuss your ideas and how I can help.
+            Let&apos;s collaborate to create something truly exceptional. Reach out to discuss your ideas and how we can help.
           </p>
           <Button size="lg" asChild className="bg-primary hover:bg-primary/80 text-primary-foreground shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300">
             <Link href="/contact">
-              Contact Me Now
+              Contact Us Now
             </Link>
           </Button>
         </div>

@@ -3,8 +3,8 @@ import ProjectCard from '@/components/shared/ProjectCard';
 import { projects } from '@/lib/data';
 
 export const metadata = {
-  title: 'My Work - Oomkar Anil Panchal',
-  description: 'Explore Oomkar Anil Panchal\'s portfolio of video editing, motion graphics, and other creative projects.',
+  title: 'Our Portfolio - Gulmohar Production',
+  description: 'Explore Gulmohar Production\'s portfolio of video editing, motion graphics, and other creative projects.',
 };
 
 export default function WorkPage() {
@@ -12,10 +12,10 @@ export default function WorkPage() {
     <div className="space-y-12">
       <header className="text-center space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold font-headline">
-          My Portfolio
+          Our Portfolio
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Discover a selection of my finest work, showcasing my passion for visual storytelling and technical excellence in video editing and motion graphics.
+          Discover a selection of our finest work, showcasing our passion for visual storytelling and technical excellence in video editing and motion graphics.
         </p>
       </header>
 

@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Oomkar Anil Panchal - Video Editor & Motion Graphics Designer',
-  description: "Portfolio of Oomkar Anil Panchal, a creative professional specializing in video editing, motion graphics design, color correction, VFX, sound design, and 2D/3D animation.",
+  title: 'Gulmohar Production - Video Production & Creative Services',
+  description: "Portfolio of Gulmohar Production, specializing in video editing, motion graphics design, color correction, VFX, sound design, and 2D/3D animation.",
 };
 
 export default function RootLayout({

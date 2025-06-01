@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
     return { title: 'Project Not Found' };
   }
   return {
-    title: `${project.title} - Oomkar Anil Panchal`,
+    title: `${project.title} - Gulmohar Production`,
     description: project.description,
   };
 }

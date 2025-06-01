@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
         <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-          &copy; {new Date().getFullYear()} Oomkar Anil Panchal. All rights reserved.
+          &copy; {new Date().getFullYear()} Gulmohar Production. All rights reserved.
         </p>
         <div className="flex space-x-4">
           {SOCIAL_LINKS.map((link) => (
