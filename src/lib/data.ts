@@ -20,7 +20,7 @@ export const projects: Project[] = [
     description: 'Captivating commercial spot for the launch of Brand X new product line.',
     thumbnailUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'product commercial',
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_HERE_2',
+    videoUrl: 'https://www.youtube.com/embed/ogfYd705cRs', // Big Buck Bunny
     category: 'Commercial',
     date: '2024',
     client: 'Brand X Corp.',
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description: 'A documentary capturing the serene beauty of mountain landscapes.',
     thumbnailUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'mountain landscape',
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_HERE_3',
+    videoUrl: 'https://www.youtube.com/embed/QH2-TGUlwu4', // Elephants Dream
     category: 'Documentary',
     date: '2023',
     client: 'Nature First Films',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     description: 'An artistic music video exploring urban nightlife and energy.',
     thumbnailUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'city nightlife',
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_HERE_4',
+    videoUrl: 'https://www.youtube.com/embed/y_663_rSgOg', // Sintel
     category: 'Music Video',
     date: '2024',
     client: 'The Night Owls (Band)',
