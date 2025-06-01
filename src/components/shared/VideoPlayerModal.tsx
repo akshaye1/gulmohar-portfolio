@@ -1,5 +1,7 @@
+
 "use client";
 
+import React, { useState } from "react"; // Correctly import useState
 import {
   Dialog,
   DialogContent,
@@ -23,7 +25,7 @@ export default function VideoPlayerModal({
   triggerLabel = "Watch Video",
   triggerIcon = <PlayCircle className="mr-2 h-5 w-5" /> 
 }: VideoPlayerModalProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Use imported useState
 
   // Basic URL validation for YouTube embeds
   const isYouTubeUrl = videoUrl.includes("youtube.com/embed");
@@ -31,12 +33,12 @@ export default function VideoPlayerModal({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="default" size="lg">
+        <Button variant="default" size="lg" className="bg-primary/80 hover:bg-primary text-primary-foreground shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300">
           {triggerIcon}
           {triggerLabel}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[900px] p-0 border-0">
+      <DialogContent className="sm:max-w-[900px] p-0 border-0 bg-black/80 backdrop-blur-sm rounded-lg">
         <DialogHeader className="sr-only">
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
@@ -50,10 +52,10 @@ export default function VideoPlayerModal({
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-              className="rounded-md"
+              className="rounded-lg" // Ensure iframe also gets rounded corners if content spills
             ></iframe>
           ) : (
-            <video width="100%" height="100%" controls autoPlay className="rounded-md">
+            <video width="100%" height="100%" controls autoPlay className="rounded-lg">
               <source src={videoUrl} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -62,20 +64,4 @@ export default function VideoPlayerModal({
       </DialogContent>
     </Dialog>
   );
-}
-
-// Helper to check if React is defined before using its methods
-const React = {
-  useState: (initialState: any) => {
-    if (typeof window !== 'undefined') {
-      return (window as any).React.useState(initialState);
-    }
-    // Fallback for server-side rendering or when React is not available on window
-    let state = initialState;
-    const setState = (newState: any) => { state = newState; };
-    return [state, setState];
-  },
-};
-if (typeof window !== 'undefined' && !(window as any).React) {
-  (window as any).React = React;
 }

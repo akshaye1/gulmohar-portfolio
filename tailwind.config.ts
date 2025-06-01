@@ -18,7 +18,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Inter', 'sans-serif'], /* Consider a more distinct headline font if desired */
         code: ['monospace', 'monospace'],
       },
       colors: {
@@ -95,10 +95,20 @@ export default {
             height: '0',
           },
         },
+        'fadeInUp': {
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slowZoom': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.03)' }, /* Subtle zoom */
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fadeInUp': 'fadeInUp 0.6s ease-out forwards',
+        'slowZoom': 'slowZoom 15s ease-in-out infinite',
       },
       spacing: {
         'header-height': 'var(--header-height)',
