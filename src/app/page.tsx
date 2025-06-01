@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -16,7 +15,14 @@ export default function HomePage() {
   // Select specific projects for the homepage
   const projectTitlesForHomepage = ['Short Films', 'AD', 'Video Production', 'Post Production'];
   const featuredProjects = projectTitlesForHomepage
-    .map(title => projects.find(p => p.title === title))
+    .map((title, idx) => {
+      if (idx === 3) {
+        const project = projects.find(p => p.title === title);
+        // Only override the title for display, keep all other properties (including thumbnailUrl)
+        return project ? { ...project, title: 'Post Production' } : undefined;
+      }
+      return projects.find(p => p.title === title);
+    })
     .filter((project): project is Project => project !== undefined);
 
   return (
@@ -54,7 +60,7 @@ export default function HomePage() {
                 View Our Work <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10 hover:text-white shadow-md hover:shadow-white/30 transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" variant="outline" asChild className="border-white text-black dark:text-white hover:bg-white hover:text-black dark:hover:text-black shadow-md hover:shadow-white/30 transform hover:scale-105 transition-all duration-300">
               <Link href="/contact">
                 Get In Touch <PlayCircle className="ml-2 h-5 w-5" />
               </Link>

@@ -1,4 +1,3 @@
-
 import ProjectCard from '@/components/shared/ProjectCard';
 import { projects } from '@/lib/data';
 import type { Project } from '@/types';
@@ -72,11 +71,12 @@ export default function WorkPage() {
           Discover a highlight from each of our key service areas: ADs, Video Production, Short Films, and Post Production.
         </p>
       </header>
-
-      <Section title="AD" project={firstAdProject} />
-      <Section title="Video Production" project={firstVideoProductionProject} />
-      <Section title="Short Films" project={firstShortFilmProject} />
-      <Section title="Post Production" project={firstPostProductionProject} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {firstAdProject && <ProjectCard project={firstAdProject} />}
+        {firstVideoProductionProject && <ProjectCard project={firstVideoProductionProject} />}
+        {firstShortFilmProject && <ProjectCard project={firstShortFilmProject} />}
+        {firstPostProductionProject && <ProjectCard project={{...firstPostProductionProject, title: 'Post Production'}} />}
+      </div>
     </div>
   );
 }
