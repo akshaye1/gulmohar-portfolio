@@ -17,10 +17,10 @@ export default function HomePage() {
   return (
     <div className="space-y-20 md:space-y-32">
       {/* Hero Section */}
-      <section className="relative min-h-[calc(90vh-var(--header-height))] flex items-center justify-center text-center rounded-lg overflow-hidden">
+      <section className="relative min-h-[calc(80vh-var(--header-height))] flex items-center justify-center text-center rounded-lg overflow-hidden shadow-xl">
         <Image
           src="https://picsum.photos/1200/800"
-          alt="Abstract creative background"
+          alt="Abstract cinematic background"
           layout="fill"
           objectFit="cover"
           quality={85}
@@ -28,19 +28,19 @@ export default function HomePage() {
           priority
         />
         <div className="relative z-10 p-8 space-y-8 max-w-4xl mx-auto">
-          <h1 
+          <h1
             className="text-5xl md:text-7xl font-bold font-headline text-white leading-tight animate-fadeInUp"
             style={{ animationDelay: '0.2s' }}
           >
             Gulmohar Production
           </h1>
-          <p 
+          <p
             className="text-xl md:text-2xl text-slate-200/90 animate-fadeInUp"
             style={{ animationDelay: '0.4s' }}
           >
-            Video Editor & Motion Graphics Designer | Crafting Visual Stories That Resonate
+            Gulmohar is your video production partner. We create stunning visuals that bring your ideas to life!
           </p>
-          <div 
+          <div
             className="space-x-4 animate-fadeInUp"
             style={{ animationDelay: '0.6s' }}
           >
