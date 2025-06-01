@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import ProjectCard from '@/components/shared/ProjectCard';
 import { projects } from '@/lib/data';
+import type { Project } from '@/types';
 import { ArrowRight, PlayCircle, Film } from 'lucide-react';
 
 export const metadata = {
@@ -12,7 +13,11 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  const featuredProjects = projects.slice(0, 3);
+  // Select specific projects for the homepage
+  const projectTitlesForHomepage = ['Short Films', 'AD', 'Video Production', 'Post Production'];
+  const featuredProjects = projectTitlesForHomepage
+    .map(title => projects.find(p => p.title === title))
+    .filter((project): project is Project => project !== undefined);
 
   return (
     <div className="space-y-20 md:space-y-32">
@@ -63,7 +68,7 @@ export default function HomePage() {
         <h2 className="text-4xl md:text-5xl font-bold font-headline text-center mb-16">
           Latest Work
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {featuredProjects.map((project, index) => (
              <div key={project.id} className="animate-fadeInUp" style={{ animationDelay: `${1 + index * 0.2}s`}}>
               <ProjectCard project={project} />
