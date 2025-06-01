@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, Lightbulb, User, Film, Palette, Scissors, Sparkles, Volume2, Layers } from 'lucide-react';
+import { Zap, Lightbulb, Users, Target, Film, Palette, Scissors, Sparkles, Volume2, Layers } from 'lucide-react';
 
 export const metadata = {
   title: 'About Us - Gulmohar Production',
@@ -36,17 +36,29 @@ export default function AboutPage() {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="text-2xl font-headline flex items-center">
-              <User className="h-6 w-6 mr-3 text-primary" />
-              Oomkar Anil Panchal (Founder)
+              <Lightbulb className="h-6 w-6 mr-3 text-primary" />
+              Our Creative Journey
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 text-foreground/80">
-            <p>
-              Hi, I&apos;m Oomkar Anil Panchal, founder of Gulmohar Production. I&apos;m a video editor and motion graphics designer from Mumbai, India. I love to create visual stories with editing and motion graphics, which give me a platform to express my creativity.
-            </p>
-            <p>
-              At Gulmohar Production, we are always learning and exploring new creative aspects. We have an eye for detail and a passion for storytelling. Our experience ranges from short films, documentaries, commercials and music videos. Let&apos;s connect and create something amazing together.
-            </p>
+          <CardContent className="space-y-6 text-foreground/80">
+            <div>
+              <h3 className="text-xl font-semibold mb-2 flex items-center">
+                <Users className="h-5 w-5 mr-2 text-accent" />
+                Who We Are
+              </h3>
+              <p>
+                At Gulmohar Production, we are passionate about visual storytelling and creating exceptional video content. Our team combines creativity with technical expertise to deliver captivating videos tailored to meet your needs.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2 flex items-center">
+                <Target className="h-5 w-5 mr-2 text-accent" />
+                Our Mission
+              </h3>
+              <p>
+                We strive to exceed expectations by offering end-to-end video production services that cover everything from concept development to the final product. With a focus on quality and innovation, we aim to inspire and engage audiences through our video projects.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
