@@ -13,10 +13,13 @@ export default function AboutPage() {
     <div className="space-y-16">
       <header className="text-center space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold font-headline">
-          About Us
+          About Gulmohar Production
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A creative production house from Mumbai, India, specializing in visual storytelling.
+        <p className="text-2xl text-muted-foreground max-w-2xl mx-auto font-semibold">
+          Transforming Concepts into Reality
+        </p>
+        <p className="text-lg text-foreground/90 max-w-3xl mx-auto">
+          Passionate about visual storytelling, creating exceptional video content. Creativity meets technical expertise for captivating videos tailored to your needs.
         </p>
       </header>
 
