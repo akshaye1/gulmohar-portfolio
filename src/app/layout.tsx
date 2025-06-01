@@ -5,11 +5,17 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
-import { Fahkwang } from 'next/font/google';
+import { Inter, Fahkwang } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 const fahkwang = Fahkwang({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'], // Common weights for Fahkwang
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-fahkwang',
   display: 'swap',
 });
@@ -25,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${fahkwang.variable} font-body`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fahkwang.variable} font-sans`}>
       <head />
       <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider

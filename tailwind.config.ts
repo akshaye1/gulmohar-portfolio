@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-fahkwang)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
         headline: ['var(--font-fahkwang)', ...defaultTheme.fontFamily.sans],
         code: ['monospace', 'monospace'],
       },
