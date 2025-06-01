@@ -8,26 +8,24 @@ export const metadata = {
   description: 'Explore Gulmohar Production\'s portfolio, categorized by ADs, Video Production, Short Films, and Post Production highlights.',
 };
 
-const Section = ({ title, projectsList }: { title: string, projectsList: Project[] }) => {
-  if (!projectsList || projectsList.length === 0) {
+const Section = ({ title, project }: { title: string, project: Project | null }) => {
+  if (!project) {
     return (
       <section className="mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8 text-center md:text-left">
           {title}
         </h2>
-        <p className="text-muted-foreground">No projects in this category yet.</p>
+        <p className="text-muted-foreground text-center md:text-left">No projects in this category yet.</p>
       </section>
     );
   }
   return (
     <section className="mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8">
+      <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8 text-center md:text-left">
         {title}
       </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projectsList.map((project) => (
-          <ProjectCard key={`${title}-${project.id}`} project={project} />
-        ))}
+      <div className="max-w-xl mx-auto"> {/* Centering the single card and limiting its max width */}
+        <ProjectCard project={project} />
       </div>
     </section>
   );
@@ -58,6 +56,12 @@ export default function WorkPage() {
     )
   );
 
+  // Select only the first project for each category
+  const firstAdProject = adProjects.length > 0 ? adProjects[0] : null;
+  const firstVideoProductionProject = videoProductionProjects.length > 0 ? videoProductionProjects[0] : null;
+  const firstShortFilmProject = shortFilmProjects.length > 0 ? shortFilmProjects[0] : null;
+  const firstPostProductionProject = postProductionProjects.length > 0 ? postProductionProjects[0] : null;
+
   return (
     <div className="space-y-12">
       <header className="text-center space-y-4">
@@ -65,14 +69,14 @@ export default function WorkPage() {
           Our Portfolio
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Discover a selection of our finest work, categorized by ADs, Video Production, Short Films, and Post Production highlights.
+          Discover a highlight from each of our key service areas: ADs, Video Production, Short Films, and Post Production.
         </p>
       </header>
 
-      <Section title="AD" projectsList={adProjects} />
-      <Section title="Video Production" projectsList={videoProductionProjects} />
-      <Section title="Short Films" projectsList={shortFilmProjects} />
-      <Section title="Post Production" projectsList={postProductionProjects} />
+      <Section title="AD" project={firstAdProject} />
+      <Section title="Video Production" project={firstVideoProductionProject} />
+      <Section title="Short Films" project={firstShortFilmProject} />
+      <Section title="Post Production" project={firstPostProductionProject} />
     </div>
   );
 }
