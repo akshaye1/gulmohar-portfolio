@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, Lightbulb, Users, Target } from 'lucide-react';
+import { Zap, Lightbulb, Users, Target, PenTool, Clapperboard, Wand2 } from 'lucide-react';
 
 export const metadata = {
   title: 'About Us - Gulmohar Production',
@@ -12,16 +12,19 @@ const services = [
   {
     title: "Script Writing",
     imageUrl: "https://placehold.co/600x450.png",
+    icon: PenTool,
     imageHint: "typewriter script",
   },
   {
     title: "Making video content",
     imageUrl: "https://placehold.co/600x450.png",
+    icon: Clapperboard,
     imageHint: "camera clapperboard",
   },
   {
     title: "Post Production",
     imageUrl: "https://placehold.co/600x450.png",
+    icon: Wand2,
     imageHint: "editing computer",
   },
 ];
