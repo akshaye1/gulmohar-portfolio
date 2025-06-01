@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, Lightbulb, Users, Target, Film, Palette, Scissors, Sparkles, Volume2, Layers } from 'lucide-react';
+import { Zap, Lightbulb, Users, Target, PenTool, Clapperboard, Wand2 } from 'lucide-react';
 
 export const metadata = {
   title: 'About Us - Gulmohar Production',
@@ -71,30 +71,18 @@ export default function AboutPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-foreground/80">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 text-foreground/80">
             <li className="flex items-center space-x-3">
-              <Scissors className="h-5 w-5 text-accent flex-shrink-0" />
-              <span><strong>Video Editing</strong></span>
+              <PenTool className="h-5 w-5 text-accent flex-shrink-0" />
+              <span><strong>Script Writing</strong></span>
             </li>
             <li className="flex items-center space-x-3">
-              <Sparkles className="h-5 w-5 text-accent flex-shrink-0" />
-              <span><strong>Motion Graphics Design</strong></span>
+              <Clapperboard className="h-5 w-5 text-accent flex-shrink-0" />
+              <span><strong>Making video content</strong></span>
             </li>
             <li className="flex items-center space-x-3">
-              <Palette className="h-5 w-5 text-accent flex-shrink-0" />
-              <span><strong>Color Correction / Grading</strong></span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Film className="h-5 w-5 text-accent flex-shrink-0" />
-              <span><strong>Visual Effects (VFX)</strong></span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Volume2 className="h-5 w-5 text-accent flex-shrink-0" />
-              <span><strong>Sound Design</strong></span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Layers className="h-5 w-5 text-accent flex-shrink-0" />
-              <span><strong>2D/3D Animation</strong></span>
+              <Wand2 className="h-5 w-5 text-accent flex-shrink-0" />
+              <span><strong>Post Production</strong></span>
             </li>
           </ul>
         </CardContent>
