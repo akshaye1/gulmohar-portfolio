@@ -1,3 +1,4 @@
+
 import ContactForm from '@/components/sections/ContactForm';
 import { SOCIAL_LINKS } from '@/lib/constants';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,8 +6,8 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Contact Us - Filmic Visions',
-  description: 'Get in touch with Filmic Visions to discuss your video project or inquiry.',
+  title: 'Contact Me - Oomkar Anil Panchal',
+  description: 'Get in touch with Oomkar Anil Panchal to discuss your video project or inquiry.',
 };
 
 export default function ContactPage() {
@@ -17,7 +18,7 @@ export default function ContactPage() {
           Get In Touch
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Have a project in mind or just want to say hello? We&apos;d love to hear from you.
+          Have a project in mind or just want to say hello? I&apos;d love to hear from you.
         </p>
       </header>
 
@@ -25,7 +26,7 @@ export default function ContactPage() {
         <div className="lg:col-span-2">
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-headline">Send Us a Message</CardTitle>
+              <CardTitle className="text-2xl font-headline">Send Me a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <ContactForm />
@@ -43,8 +44,8 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <Link href="mailto:hello@filmicvisions.com" className="text-sm text-muted-foreground hover:text-primary">
-                    hello@filmicvisions.com
+                  <Link href="mailto:panchalofficialwork@gmail.com" className="text-sm text-muted-foreground hover:text-primary break-all">
+                    panchalofficialwork@gmail.com
                   </Link>
                 </div>
               </div>
@@ -52,17 +53,17 @@ export default function ContactPage() {
                 <Phone className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <Link href="tel:+1234567890" className="text-sm text-muted-foreground hover:text-primary">
-                    +1 (234) 567-890
+                  <Link href="tel:+918655013233" className="text-sm text-muted-foreground hover:text-primary">
+                    +91 86550 13233
                   </Link>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Office</h3>
+                  <h3 className="font-semibold">Location</h3>
                   <p className="text-sm text-muted-foreground">
-                    123 Creative Lane, Film City, CA 90210
+                    Mumbai, India
                   </p>
                 </div>
               </div>
@@ -71,7 +72,7 @@ export default function ContactPage() {
 
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-xl font-headline">Connect With Us</CardTitle>
+              <CardTitle className="text-xl font-headline">Connect With Me</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex space-x-4">

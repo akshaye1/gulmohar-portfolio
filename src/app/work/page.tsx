@@ -1,9 +1,10 @@
+
 import ProjectCard from '@/components/shared/ProjectCard';
 import { projects } from '@/lib/data';
 
 export const metadata = {
-  title: 'Our Work - Filmic Visions',
-  description: 'Explore our portfolio of filming, shooting, and video editing projects.',
+  title: 'My Work - Oomkar Anil Panchal',
+  description: 'Explore Oomkar Anil Panchal\'s portfolio of video editing, motion graphics, and other creative projects.',
 };
 
 export default function WorkPage() {
@@ -11,10 +12,10 @@ export default function WorkPage() {
     <div className="space-y-12">
       <header className="text-center space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold font-headline">
-          Our Portfolio
+          My Portfolio
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Discover a selection of our finest work, showcasing our passion for visual storytelling and technical excellence.
+          Discover a selection of my finest work, showcasing my passion for visual storytelling and technical excellence in video editing and motion graphics.
         </p>
       </header>
 

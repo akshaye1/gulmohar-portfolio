@@ -1,3 +1,4 @@
+
 import { projects } from '@/lib/data';
 import type { Project } from '@/types';
 import { notFound } from 'next/navigation';
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
     return { title: 'Project Not Found' };
   }
   return {
-    title: `${project.title} - Filmic Visions`,
+    title: `${project.title} - Oomkar Anil Panchal`,
     description: project.description,
   };
 }
