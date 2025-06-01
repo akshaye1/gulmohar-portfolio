@@ -5,11 +5,12 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'], // Added common weights
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -24,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
+    <html lang="en" suppressHydrationWarning className={`${poppins.variable} font-body`}>
       <head />
-      <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
+      <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -1,9 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Ensuring Inter is primary */
+  /* Updated to use the CSS variable defined by next/font for Poppins */
+  /* The 'font-body' class in RootLayout's body tag will apply this via Tailwind config */
 }
 
 @layer base {
@@ -90,6 +92,7 @@ body {
   body {
     @apply bg-background text-foreground;
     @apply transition-colors duration-300 ease-in-out;
+    /* font-family rule removed from here as it's handled by next/font and Tailwind */
   }
   /* Enhanced transitions for links and buttons */
   a, button, [role="button"], input[type="button"], input[type="submit"] {
