@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
-        headline: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
+        body: ['var(--font-fahkwang)', ...defaultTheme.fontFamily.sans],
+        headline: ['var(--font-fahkwang)', ...defaultTheme.fontFamily.sans],
         code: ['monospace', 'monospace'],
       },
       colors: {

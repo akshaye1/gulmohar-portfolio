@@ -5,12 +5,12 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
-import { Poppins } from 'next/font/google';
+import { Fahkwang } from 'next/font/google';
 
-const poppins = Poppins({
+const fahkwang = Fahkwang({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'], // Added common weights
-  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700'], // Common weights for Fahkwang
+  variable: '--font-fahkwang',
   display: 'swap',
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${poppins.variable} font-body`}>
+    <html lang="en" suppressHydrationWarning className={`${fahkwang.variable} font-body`}>
       <head />
       <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider
