@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
         hostname: 'unsplash.com', // For direct Unsplash links if any (though images.unsplash.com is more common for raw images)
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

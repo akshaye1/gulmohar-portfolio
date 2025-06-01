@@ -13,7 +13,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-[calc(80vh-var(--header-height))] flex items-center justify-center text-center rounded-lg overflow-hidden shadow-xl">
         <Image
-          src="https://unsplash.com/photos/people-are-standing-on-hollywood-walk-of-fame-stars-2hR1qrO1xro"
+          src="https://picsum.photos/200/300"
           alt="Abstract cinematic background"
           layout="fill"
           objectFit="cover"
