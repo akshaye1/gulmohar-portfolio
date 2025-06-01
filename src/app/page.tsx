@@ -19,7 +19,6 @@ export default function HomePage() {
           objectFit="cover"
           quality={80}
           className="absolute inset-0 -z-10 filter brightness-50"
-          data-ai-hint="abstract cinematic dark"
           priority
         />
         <div className="relative z-10 p-8 space-y-6 max-w-3xl mx-auto bg-black/30 backdrop-blur-sm rounded-md">

@@ -22,12 +22,11 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div>
           <Image
-            src="https://placehold.co/600x400.png"
+            src="https://picsum.photos/600/400"
             alt="Creative team working on a film project"
             width={600}
             height={400}
             className="rounded-lg shadow-xl"
-            data-ai-hint="film crew editing"
           />
         </div>
         <Card className="shadow-lg">

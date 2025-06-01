@@ -35,8 +35,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   if (!project) {
     notFound();
   }
-  const dataAiHint = project.thumbnailUrl.includes('placehold.co') ? project.dataAiHint || 'creative video detail' : undefined;
-
 
   return (
     <div className="space-y-12">
@@ -52,7 +50,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           layout="fill"
           objectFit="cover"
           priority
-          data-ai-hint={dataAiHint}
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <VideoPlayerModal videoUrl={project.videoUrl} title={project.title} />

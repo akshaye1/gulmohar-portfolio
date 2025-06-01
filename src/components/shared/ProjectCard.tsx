@@ -10,8 +10,6 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const dataAiHint = project.thumbnailUrl.includes('placehold.co') ? project.dataAiHint || 'creative video' : undefined;
-
   return (
     <Card className="overflow-hidden flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardHeader className="p-0">
@@ -23,7 +21,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               layout="fill"
               objectFit="cover"
               className="hover:scale-105 transition-transform duration-300"
-              data-ai-hint={dataAiHint}
             />
           </div>
         </Link>

@@ -23,4 +23,5 @@ export interface Project {
   client?: string;
   services?: string[];
   longDescription?: string;
+  dataAiHint?: string; // Keep this for potential future use, but it's not used with picsum
 }

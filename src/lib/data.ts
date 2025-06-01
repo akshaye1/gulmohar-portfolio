@@ -5,8 +5,7 @@ export const projects: Project[] = [
     id: 'project-alpha',
     title: 'Project Alpha',
     description: 'A stunning visual journey into the heart of abstract storytelling.',
-    thumbnailUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'abstract cinematic',
+    thumbnailUrl: 'https://picsum.photos/600/400',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Example YouTube embed URL
     category: 'Short Film',
     date: '2023',
@@ -18,8 +17,7 @@ export const projects: Project[] = [
     id: 'brand-x-commercial',
     title: 'Brand X Commercial',
     description: 'Captivating commercial spot for the launch of Brand X new product line.',
-    thumbnailUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'product commercial',
+    thumbnailUrl: 'https://picsum.photos/600/400',
     videoUrl: 'https://www.youtube.com/embed/ogfYd705cRs', // Big Buck Bunny
     category: 'Commercial',
     date: '2024',
@@ -31,8 +29,7 @@ export const projects: Project[] = [
     id: 'mountain-echoes',
     title: 'Mountain Echoes',
     description: 'A documentary capturing the serene beauty of mountain landscapes.',
-    thumbnailUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'mountain landscape',
+    thumbnailUrl: 'https://picsum.photos/600/400',
     videoUrl: 'https://www.youtube.com/embed/QH2-TGUlwu4', // Elephants Dream
     category: 'Documentary',
     date: '2023',
@@ -44,8 +41,7 @@ export const projects: Project[] = [
     id: 'city-lights-symphony',
     title: 'City Lights Symphony',
     description: 'An artistic music video exploring urban nightlife and energy.',
-    thumbnailUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'city nightlife',
+    thumbnailUrl: 'https://picsum.photos/600/400',
     videoUrl: 'https://www.youtube.com/embed/y_663_rSgOg', // Sintel
     category: 'Music Video',
     date: '2024',
