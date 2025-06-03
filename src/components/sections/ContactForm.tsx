@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -34,6 +35,7 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,14 +47,31 @@ export default function ContactForm() {
     },
   });
 
-  // TODO: Implement actual form submission (e.g., Server Action or API endpoint)
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values); // Placeholder for submission logic
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    form.reset(); // Reset form after successful submission
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
+    try {
+      // Send form data to a backend API endpoint
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!response.ok) throw new Error("Failed to send message");
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description:
+          "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -116,8 +135,19 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full md:w-auto">
-          Send Message <Send className="ml-2 h-4 w-4" />
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full md:w-auto"
+          disabled={loading}
+        >
+          {loading ? (
+            "Sending..."
+          ) : (
+            <>
+              Send Message <Send className="ml-2 h-4 w-4" />
+            </>
+          )}
         </Button>
       </form>
     </Form>

@@ -1,4 +1,3 @@
-
 import ContactForm from '@/components/sections/ContactForm';
 import { SOCIAL_LINKS } from '@/lib/constants';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -44,8 +43,8 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <Link href="mailto:panchalofficialwork@gmail.com" className="text-sm text-muted-foreground hover:text-primary break-all">
-                    panchalofficialwork@gmail.com
+                  <Link href="mailto:gulmohar.cn@gmail.com" className="text-sm text-muted-foreground hover:text-primary break-all">
+                    gulmohar.cn@gmail.com
                   </Link>
                 </div>
               </div>
@@ -53,8 +52,8 @@ export default function ContactPage() {
                 <Phone className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <Link href="tel:+918655013233" className="text-sm text-muted-foreground hover:text-primary">
-                    +91 86550 13233
+                  <Link href="tel:+918850635647" className="text-sm text-muted-foreground hover:text-primary">
+                    +91 88506 35647
                   </Link>
                 </div>
               </div>
