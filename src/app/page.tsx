@@ -58,14 +58,11 @@ export default function HomePage() {
             Gulmohar is your video production partner. We create stunning
             visuals that bring your ideas to life!
           </p>
-          <div
-            className="space-x-4 animate-fadeInUp"
-            style={{ animationDelay: "0.6s" }}
-          >
+          <div className="flex flex-col items-center space-y-4 w-full max-w-xs mx-auto">
             <Button
               size="lg"
               asChild
-              className="bg-primary hover:bg-primary/80 text-primary-foreground shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
+              className="w-full bg-primary hover:bg-primary/80 text-primary-foreground shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
             >
               <Link href="/work">
                 View Our Work <ArrowRight className="ml-2 h-5 w-5" />
@@ -75,7 +72,7 @@ export default function HomePage() {
               size="lg"
               variant="outline"
               asChild
-              className="border-white text-black dark:text-white hover:bg-white hover:text-black dark:hover:text-black shadow-md hover:shadow-white/30 transform hover:scale-105 transition-all duration-300"
+              className="w-full border-white text-black dark:text-white hover:bg-white hover:text-black dark:hover:text-black shadow-md hover:shadow-white/30 transform hover:scale-105 transition-all duration-300"
             >
               <Link href="/contact">
                 Get In Touch <PlayCircle className="ml-2 h-5 w-5" />
