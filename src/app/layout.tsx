@@ -1,28 +1,27 @@
-
-import type { Metadata } from 'next';
-import './globals.css';
-import { ThemeProvider } from '@/components/layout/ThemeProvider';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import { Toaster } from "@/components/ui/toaster";
-import { Inter, Fahkwang } from 'next/font/google';
+import type { Metadata } from "next";
+import "./globals.css";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { Inter, Fahkwang } from "next/font/google";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 const fahkwang = Fahkwang({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-fahkwang',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-fahkwang",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'Gulmohar Production - Video Production & Creative Services',
-  description: "Portfolio of Gulmohar Production, specializing in video editing, motion graphics design, color correction, VFX, sound design, and 2D/3D animation.",
+  title: "Gulmohar Production - Video Production & Creative Services",
+  description:
+    "Portfolio of Gulmohar Production, specializing in video editing, motion graphics design, color correction, VFX, sound design, and 2D/3D animation.",
 };
 
 export default function RootLayout({
@@ -31,7 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fahkwang.variable} font-sans`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${fahkwang.variable} font-sans`}
+    >
       <head />
       <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider
@@ -45,7 +48,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <Toaster />
         </ThemeProvider>
       </body>
     </html>
