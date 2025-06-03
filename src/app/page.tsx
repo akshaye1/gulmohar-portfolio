@@ -97,6 +97,20 @@ export default function HomePage() {
               <ProjectCard project={project} />
             </div>
           ))}
+          {/* AD Card from Work Page */}
+          {(() => {
+            const adProject = projects.find((p) => p.title === "Advertisement");
+            return adProject ? (
+              <div
+                className="animate-fadeInUp"
+                style={{
+                  animationDelay: `${1 + featuredProjects.length * 0.2}s`,
+                }}
+              >
+                <ProjectCard project={adProject} />
+              </div>
+            ) : null;
+          })()}
         </div>
         <div className="text-center mt-16">
           <Button
