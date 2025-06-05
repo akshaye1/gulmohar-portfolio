@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Inter, Fahkwang } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
