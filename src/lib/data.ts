@@ -17,12 +17,33 @@ export const projects: Project[] = [
     longDescription:
       "Project Alpha was an exploration of visual metaphors and narrative ambiguity. Shot over several weeks in diverse locations, the film pushes boundaries of conventional filmmaking. The editing process focused on creating a rhythmic and immersive experience, complemented by a meticulous color grading pass to enhance the mood and atmosphere.",
     dataAiHint: "abstract film", // Added dataAiHint
+    showcaseVideos: [
+      {
+        name: "Sataha tak",
+        videoUrl: "https://youtu.be/dPPVLgL0Hlw?si=T4-_KtXIbN0jZzr-",
+        thumbnail: "https://img.youtube.com/vi/dPPVLgL0Hlw/maxresdefault.jpg",
+      },
+      {
+        name: "Discipline",
+        videoUrl: "https://youtu.be/6IEdAoZQsnQ?si=N6MTCK_SHPCndprh",
+        thumbnail: "https://img.youtube.com/vi/6IEdAoZQsnQ/maxresdefault.jpg",
+      },
+      {
+        name: "Gachpan",
+        videoUrl: "https://youtu.be/jF98s66Ow_c?si=yCeS6pH7lqjkqJ9v",
+        thumbnail: "https://img.youtube.com/vi/jF98s66Ow_c/maxresdefault.jpg",
+      },
+      {
+        name: "Aamcha tharlay",
+        videoUrl: "https://youtu.be/1TO2pHp6LUI?si=dq9ud2UQ-GHl-6GW",
+        thumbnail: "https://img.youtube.com/vi/1TO2pHp6LUI/maxresdefault.jpg",
+      },
+    ],
   },
   {
-    id: "brand-x-commercial",
+    id: "advertisement",
     title: "Advertisement", // Updated title
-    description:
-      "Captivating commercial spot for the BUFP Fashion ad",
+    description: "Captivating commercial spot for the BUFP Fashion ad",
     thumbnailUrl:
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
     videoUrl: "https://www.youtube.com/embed/d2-vXYpHuy0", // Updated to YouTube link
@@ -33,20 +54,58 @@ export const projects: Project[] = [
     longDescription:
       "Welcome to Gulmohar Production! Our recent project involves creating a budget-friendly and captivating ad for the new startup BUFP. As a video production company dedicated to crafting visual stories, we are thrilled to offer our enthusiastic services to help bring your brand to life.\n\nThis commercial for Brand X aimed to create a high-energy, visually engaging piece to introduce their latest product. We handled the project from concept to final delivery, ensuring the brand message was clearly communicated while maintaining a high aesthetic standard.",
     dataAiHint: "product commercial", // Added dataAiHint
+    showcaseVideos: [
+      {
+        name: "BUFP Ad",
+        videoUrl: "https://youtu.be/d2-vXYpHuy0?si=ihU-renUTYh-52DI",
+        thumbnail: "https://img.youtube.com/vi/d2-vXYpHuy0/maxresdefault.jpg",
+      },
+      {
+        name: "Pepper mint-nion",
+        videoUrl: "https://youtu.be/xYqcWVZ_EaI?si=_QsaDRIZ3SRsrCbl",
+        thumbnail: "https://img.youtube.com/vi/xYqcWVZ_EaI/maxresdefault.jpg",
+      },
+      {
+        name: "Duken's Roastery",
+        videoUrl: "https://youtu.be/JHYa0lHRrFg?si=kMClOFVRcER_YtIm",
+        thumbnail: "https://img.youtube.com/vi/JHYa0lHRrFg/maxresdefault.jpg",
+      },
+      {
+        name: "Apple cinnamon",
+        videoUrl: "https://youtu.be/YdAgRSMvEfc?si=93cda_gLDFLFJZ0R",
+        thumbnail: "https://img.youtube.com/vi/YdAgRSMvEfc/maxresdefault.jpg",
+      },
+      {
+        name: "Piatto desert studio",
+        videoUrl: "https://youtu.be/XZgZDhkL0IY?si=SDGbS0mWhtUl_IqC",
+        thumbnail: "https://img.youtube.com/vi/XZgZDhkL0IY/maxresdefault.jpg",
+      },
+      {
+        name: "Infuser",
+        videoUrl: "https://youtu.be/SYnnJQh3YrA?si=0-MT1lmObKmZiQdK",
+        thumbnail: "https://img.youtube.com/vi/SYnnJQh3YrA/maxresdefault.jpg",
+      },
+      {
+        name: "AsahiKASEI",
+        videoUrl:
+          "https://www.instagram.com/reel/CxqJgLoPE1Z/?igsh=MXQ4dXhoM3RudTNmMQ==",
+        thumbnail:
+          "https://scontent.cdninstagram.com/v/t51.29350-15/385438282_1222222342079111_1234567890_n.jpg?fit=crop&w=600&h=400", // Replace with actual Instagram thumbnail if available
+      },
+    ],
   },
   {
-    id: "mountain-echoes",
+    id: "video-production",
     title: "Video Production", // Updated title
     description:
       "A documentary capturing the serene beauty of mountain landscapes.",
     thumbnailUrl:
-      "https://images.unsplash.com/photo-1540655037529-dec987208707?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    videoUrl:
-      "https://assets.mixkit.co/videos/preview/mixkit-recording-a-singer-in-a-studio-34486-large.mp4", // Direct video URL for Video Production
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+    videoUrl: "https://www.youtube.com/embed/TUTPyfurDDM", // Example video URL
     category: "Documentary",
-    date: "2023",
-    client: "Nature First Films",
-    services: ["Location Scouting", "Drone Cinematography", "Editing"],
+    date: "2024",
+    client: "Nature Films",
+    services: ["Filming", "Editing", "Sound Design"],
     longDescription:
       "Mountain Echoes is a tribute to the grandeur of nature. Utilizing advanced drone cinematography and time-lapse techniques, this documentary offers breathtaking views and a contemplative look at the wilderness. The editing weaves together stunning visuals with a subtle soundscape to create an immersive experience.",
     dataAiHint: "mountain documentary", // Added dataAiHint
@@ -88,5 +147,12 @@ export const projects: Project[] = [
     longDescription:
       "This project highlights Gulmohar Production's expertise in various post-production services, transforming raw footage into polished, impactful visual stories. It demonstrates proficiency in complex editing sequences, seamless visual effects integration, nuanced color grading, dynamic motion graphics, and immersive sound design.",
     dataAiHint: "editing suite",
+    showcaseVideos: [
+      {
+        name: "Xiaomi15Ultra Unboxing",
+        videoUrl: "https://youtu.be/khsjCsVOpUs?si=W0s9EtHaK1n6Nylo",
+        thumbnail: "https://img.youtube.com/vi/khsjCsVOpUs/maxresdefault.jpg",
+      },
+    ],
   },
 ];

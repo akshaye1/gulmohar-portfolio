@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from "react";
+import Logo from "@/../public/Gulmohar logo craft.png"; // Correct import for Next.js public assets
 
 export default function Header() {
   const pathname = usePathname();
@@ -36,10 +37,11 @@ export default function Header() {
       <div className="container flex h-header-height max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image
-            src="/Logo.avif"
+            src={Logo}
             alt="Gulmohar Production Logo"
-            width={32}
-            height={32}
+            width={48}
+            height={48}
+            priority
             className="text-primary"
           />
           <span className="text-xl font-bold sm:inline-block font-headline">
@@ -84,7 +86,7 @@ export default function Header() {
               <div className="flex flex-col space-y-4 p-6">
                 <Link href="/" className="flex items-center space-x-2 mb-4">
                   <Image
-                    src="/Logo.avif"
+                    src={Logo}
                     alt="Gulmohar Production Logo"
                     width={24}
                     height={24}

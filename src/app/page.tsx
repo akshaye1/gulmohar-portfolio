@@ -13,23 +13,13 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  // Select specific projects for the homepage
-  const projectTitlesForHomepage = [
-    "Short Films",
-    "AD",
-    "Video Production",
-    "Post Production",
-  ];
-  const featuredProjects = projectTitlesForHomepage
-    .map((title, idx) => {
-      if (idx === 3) {
-        const project = projects.find((p) => p.title === title);
-        // Only override the title for display, keep all other properties (including thumbnailUrl)
-        return project ? { ...project, title: "Post Production" } : undefined;
-      }
-      return projects.find((p) => p.title === title);
-    })
-    .filter((project): project is Project => project !== undefined);
+  // Select specific projects for the homepage in the same order as the work page
+  const featuredProjects = [
+    projects.find((p) => p.title === "Advertisement"),
+    projects.find((p) => p.title === "Video Production"),
+    projects.find((p) => p.title === "Short Films"),
+    projects.find((p) => p.title === "Post Production"),
+  ].filter((project): project is Project => project !== undefined);
 
   return (
     <div className="space-y-20 md:space-y-32">
@@ -97,20 +87,6 @@ export default function HomePage() {
               <ProjectCard project={project} />
             </div>
           ))}
-          {/* AD Card from Work Page */}
-          {(() => {
-            const adProject = projects.find((p) => p.title === "Advertisement");
-            return adProject ? (
-              <div
-                className="animate-fadeInUp"
-                style={{
-                  animationDelay: `${1 + featuredProjects.length * 0.2}s`,
-                }}
-              >
-                <ProjectCard project={adProject} />
-              </div>
-            ) : null;
-          })()}
         </div>
         <div className="text-center mt-16">
           <Button

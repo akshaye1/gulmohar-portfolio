@@ -1,4 +1,4 @@
-import type { LucideIcon } from 'lucide-react';
+import type { LucideIcon } from "lucide-react";
 
 export interface NavItem {
   href: string;
@@ -17,11 +17,16 @@ export interface Project {
   title: string;
   description: string;
   thumbnailUrl: string;
-  videoUrl: string; 
+  videoUrl: string;
   category: string;
   date: string;
   client?: string;
   services?: string[];
   longDescription?: string;
   dataAiHint?: string; // Keep this for potential future use, but it's not used with picsum
+  showcaseVideos?: Array<{
+    name: string;
+    videoUrl: string;
+    thumbnail: string;
+  }>;
 }
