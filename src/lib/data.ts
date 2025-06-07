@@ -44,8 +44,7 @@ export const projects: Project[] = [
     id: "advertisement",
     title: "Advertisement", // Updated title
     description: "Captivating commercial spot for the BUFP Fashion ad",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
+    thumbnailUrl: "/glass-bottle.jpg",
     videoUrl: "https://www.youtube.com/embed/d2-vXYpHuy0", // Updated to YouTube link
     category: "Commercial",
     date: "2024",
@@ -98,16 +97,15 @@ export const projects: Project[] = [
     id: "video-production",
     title: "Video Production", // Updated title
     description:
-      "A documentary capturing the serene beauty of mountain landscapes.",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      "Complete video production for brands, spaces, and stories that matter.",
+    thumbnailUrl: "/video-production-behind-the-scenes.jpg",
     videoUrl: "https://www.youtube.com/embed/TUTPyfurDDM", // Example video URL
     category: "Documentary",
     date: "2024",
     client: "Nature Films",
     services: ["Filming", "Editing", "Sound Design"],
     longDescription:
-      "Mountain Echoes is a tribute to the grandeur of nature. Utilizing advanced drone cinematography and time-lapse techniques, this documentary offers breathtaking views and a contemplative look at the wilderness. The editing weaves together stunning visuals with a subtle soundscape to create an immersive experience.",
+      "At Gulmohar Production, we offer full-scale video production services tailored to a wide range of needs. From conceptualizing and scripting to filming and final editing, we handle every step of the process in-house. Whether you're looking to create impactful documentaries, polished corporate videos, detailed interior walkthroughs, or educational and informative content, our team ensures your story is captured with clarity, creativity, and precision. With the right balance of visual aesthetics and narrative strength, we turn your ideas into compelling video experiences.",
     dataAiHint: "mountain documentary", // Added dataAiHint
   },
   {

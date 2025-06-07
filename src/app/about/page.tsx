@@ -31,11 +31,13 @@ const services = [
     imageHint: "typewriter script",
   },
   {
-    title: "Making video content",
+    title: "Video Production",
     imageUrl:
       "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
     icon: Clapperboard,
     imageHint: "camera clapperboard",
+    description:
+      "At Gulmohar Production, we offer full-scale video production services tailored to a wide range of needs. From conceptualizing and scripting to filming and final editing, we handle every step of the process in-house. Whether you're looking to create impactful documentaries, polished corporate videos, detailed interior walkthroughs, or educational and informative content, our team ensures your story is captured with clarity, creativity, and precision. With the right balance of visual aesthetics and narrative strength, we turn your ideas into compelling video experiences.",
   },
   {
     title: "Post Production",
