@@ -11,6 +11,14 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from "react";
 import Logo from "@/../public/Gulmohar logo craft.png"; // Correct import for Next.js public assets
+import { Pacifico } from "next/font/google";
+
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pacifico",
+  display: "swap",
+});
 
 export default function Header() {
   const pathname = usePathname();
@@ -28,6 +36,7 @@ export default function Header() {
   return (
     <header
       className={cn(
+        pacifico.variable,
         "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out",
         scrolled
           ? "bg-background/80 backdrop-blur-md shadow-lg border-b"
@@ -44,7 +53,7 @@ export default function Header() {
             priority
             className="text-primary"
           />
-          <span className="text-xl font-bold sm:inline-block font-headline">
+          <span className="text-xl font-bold sm:inline-block font-headline font-[var(--font-pacifico)]">
             Gulmohar Production
           </span>
         </Link>

@@ -2,7 +2,7 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    id: "project-alpha",
+    id: "short-films",
     title: "Short Films", // Updated title
     description:
       "A stunning visual journey into the heart of abstract storytelling.",

@@ -33,7 +33,6 @@ const Section = ({
         {title}
       </h2>
       <div className="max-w-xl mx-auto">
-        {" "}
         {/* Centering the single card and limiting its max width */}
         <ProjectCard project={project} />
       </div>
@@ -48,34 +47,16 @@ export default function WorkPage() {
     (p) => p.category === "Documentary" || p.category === "Music Video"
   );
 
-  const postProductionServicesKeywords = [
-    "editing",
-    "color grading",
-    "vfx",
-    "visual effects",
-    "sound design",
-    "post-production",
-    "motion graphics",
-    "color correction",
-    "2d animation",
-    "3d animation",
-    "video editing",
-  ];
-
-  const postProductionProjects = projects.filter((p) =>
-    p.services?.some((service) =>
-      postProductionServicesKeywords.includes(service.toLowerCase())
-    )
+  // Select the Post Production project by its unique id
+  const firstPostProductionProject = projects.find(
+    (p) => p.id === "post-production-excellence"
   );
 
-  // Select only the first project for each category
   const firstAdProject = adProjects.length > 0 ? adProjects[0] : null;
   const firstVideoProductionProject =
     videoProductionProjects.length > 0 ? videoProductionProjects[0] : null;
   const firstShortFilmProject =
     shortFilmProjects.length > 0 ? shortFilmProjects[0] : null;
-  const firstPostProductionProject =
-    postProductionProjects.length > 0 ? postProductionProjects[0] : null;
 
   const postProductionImage =
     "https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80";
