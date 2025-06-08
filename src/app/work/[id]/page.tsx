@@ -8,15 +8,16 @@ import VideoPlayerModal from "@/components/shared/VideoPlayerModal";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { CalendarDays, Briefcase, Settings2 } from "lucide-react";
+import { CalendarDays, Briefcase, Settings2, PlayCircle } from "lucide-react";
 import React, { useState, use } from "react";
+import { Button } from "@/components/ui/button";
 
 interface ProjectDetailPageProps {
   params: { id: string };
 }
 
 export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const { id } = React.use(params);
+  const { id } = params;
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
@@ -41,6 +42,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             name: video.name,
             thumbnail: video.thumbnail,
             videoUrl: video.videoUrl,
+            external: video.external,
           }))}
         />
       ) : (
@@ -147,6 +149,7 @@ type CarouselCard = {
   name: string;
   thumbnail: string;
   videoUrl: string;
+  external?: boolean;
 };
 
 interface CarouselGridProps {
@@ -187,10 +190,29 @@ function CarouselGrid({ cards }: CarouselGridProps) {
                   {card.name}
                 </span>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <VideoPlayerModal
-                    videoUrl={card.videoUrl}
-                    title={card.name}
-                  />
+                  {card.external ? (
+                    <Button
+                      asChild
+                      variant="default"
+                      size="lg"
+                      className="bg-primary/80 hover:bg-primary text-primary-foreground shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
+                    >
+                      <a
+                        href={card.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabIndex={0}
+                      >
+                        <PlayCircle className="mr-2 h-5 w-5" />
+                        Watch Video
+                      </a>
+                    </Button>
+                  ) : (
+                    <VideoPlayerModal
+                      videoUrl={card.videoUrl}
+                      title={card.name}
+                    />
+                  )}
                 </div>
               </div>
             </CardContent>

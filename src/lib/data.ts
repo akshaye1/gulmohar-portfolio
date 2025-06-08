@@ -2,7 +2,7 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    id: "project-alpha",
+    id: "short-films",
     title: "Short Films", // Updated title
     description:
       "A stunning visual journey into the heart of abstract storytelling.",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
       {
         name: "Discipline",
         videoUrl: "https://youtu.be/6IEdAoZQsnQ?si=N6MTCK_SHPCndprh",
-        thumbnail: "https://img.youtube.com/vi/6IEdAoZQsnQ/maxresdefault.jpg",
+        thumbnail: "/Discipline.jpg",
       },
       {
         name: "Gachpan",
@@ -86,10 +86,9 @@ export const projects: Project[] = [
       },
       {
         name: "AsahiKASEI",
-        videoUrl:
-          "https://www.instagram.com/reel/CxqJgLoPE1Z/?igsh=MXQ4dXhoM3RudTNmMQ==",
+        videoUrl: "https://youtube.com/shorts/0-n7mPI5Dn4",
         thumbnail:
-          "https://scontent.cdninstagram.com/v/t51.29350-15/385438282_1222222342079111_1234567890_n.jpg?fit=crop&w=600&h=400", // Replace with actual Instagram thumbnail if available
+          "https://img.youtube.com/vi/0-n7mPI5Dn4/maxresdefault.jpg", 
       },
     ],
   },
@@ -125,7 +124,7 @@ export const projects: Project[] = [
     dataAiHint: "city music", // Added dataAiHint
   },
   {
-    id: "post-production-excellence",
+    id: "post-production",
     title: "Post Production",
     description: "Mastery in editing, VFX, color grading, and motion graphics.",
     thumbnailUrl:
@@ -155,22 +154,22 @@ export const projects: Project[] = [
         name: "How to save one bucket water everyday",
         videoUrl:
           "https://experimentoindia.prathamopenschool.org/content/video.php?nodeid=347a64f0-2fae-4d04-aebf-5131de30ee8a&parentnode=c7d671bb-6fa0-4579-9152-62e6b5ef8b5d",
-        thumbnail:
-          "https://experimentoindia.prathamopenschool.org/content/thumbnails/347a64f0-2fae-4d04-aebf-5131de30ee8a.jpg", // First frame/thumbnail
+        thumbnail: "/one bucket.png", // Updated to provided image
+        external: true,
       },
       {
         name: "Grow your own food",
         videoUrl:
           "https://experimentoindia.prathamopenschool.org/content/video.php?nodeid=d85bc714-29a0-4fd0-9854-7f10d7c58197&parentnode=38066aee-c535-4e58-b502-a0f7fdd14c2d",
-        thumbnail:
-          "https://experimentoindia.prathamopenschool.org/content/thumbnails/d85bc714-29a0-4fd0-9854-7f10d7c58197.jpg", // First frame/thumbnail
+        thumbnail: "/Grow your own food.png",
+        external: true,
       },
       {
         name: "Where did your food come from",
         videoUrl:
           "https://experimentoindia.prathamopenschool.org/content/video.php?nodeid=ac64a21d-47dc-4501-bc48-8c8e83d8f1d4&parentnode=38066aee-c535-4e58-b502-a0f7fdd14c2d",
-        thumbnail:
-          "https://experimentoindia.prathamopenschool.org/content/thumbnails/ac64a21d-47dc-4501-bc48-8c8e83d8f1d4.jpg", // First frame/thumbnail
+        thumbnail: "/waste management.png",
+        external: true,
       },
     ],
   },

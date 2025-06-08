@@ -49,7 +49,7 @@ export default function WorkPage() {
 
   // Select the Post Production project by its unique id
   const firstPostProductionProject = projects.find(
-    (p) => p.id === "post-production-excellence"
+    (p) => p.id === "post-production"
   );
 
   const firstAdProject = adProjects.length > 0 ? adProjects[0] : null;

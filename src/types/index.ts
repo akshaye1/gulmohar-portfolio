@@ -28,5 +28,6 @@ export interface Project {
     name: string;
     videoUrl: string;
     thumbnail: string;
+    external?: boolean;
   }>;
 }

@@ -46,6 +46,14 @@ export default function VideoPlayerModal({
   } else if (videoUrl.includes("youtube.com/embed")) {
     isYouTubeUrl = true;
     embedUrl = videoUrl;
+  } else if (videoUrl.includes("youtube.com/shorts/")) {
+    // Convert YouTube Shorts URL to embed format
+    const shortsIdMatch = videoUrl.match(/youtube\.com\/shorts\/([\w-]+)/);
+    const shortsId = shortsIdMatch ? shortsIdMatch[1] : null;
+    if (shortsId) {
+      embedUrl = `https://www.youtube.com/embed/${shortsId}`;
+      isYouTubeUrl = true;
+    }
   }
 
   return (
