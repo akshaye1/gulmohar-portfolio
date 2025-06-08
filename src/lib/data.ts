@@ -2,7 +2,7 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    id: "short-films",
+    id: "project-alpha",
     title: "Short Films", // Updated title
     description:
       "A stunning visual journey into the heart of abstract storytelling.",
@@ -150,6 +150,27 @@ export const projects: Project[] = [
         name: "Xiaomi15Ultra Unboxing",
         videoUrl: "https://youtu.be/khsjCsVOpUs?si=W0s9EtHaK1n6Nylo",
         thumbnail: "https://img.youtube.com/vi/khsjCsVOpUs/maxresdefault.jpg",
+      },
+      {
+        name: "How to save one bucket water everyday",
+        videoUrl:
+          "https://experimentoindia.prathamopenschool.org/content/video.php?nodeid=347a64f0-2fae-4d04-aebf-5131de30ee8a&parentnode=c7d671bb-6fa0-4579-9152-62e6b5ef8b5d",
+        thumbnail:
+          "https://experimentoindia.prathamopenschool.org/content/thumbnails/347a64f0-2fae-4d04-aebf-5131de30ee8a.jpg", // First frame/thumbnail
+      },
+      {
+        name: "Grow your own food",
+        videoUrl:
+          "https://experimentoindia.prathamopenschool.org/content/video.php?nodeid=d85bc714-29a0-4fd0-9854-7f10d7c58197&parentnode=38066aee-c535-4e58-b502-a0f7fdd14c2d",
+        thumbnail:
+          "https://experimentoindia.prathamopenschool.org/content/thumbnails/d85bc714-29a0-4fd0-9854-7f10d7c58197.jpg", // First frame/thumbnail
+      },
+      {
+        name: "Where did your food come from",
+        videoUrl:
+          "https://experimentoindia.prathamopenschool.org/content/video.php?nodeid=ac64a21d-47dc-4501-bc48-8c8e83d8f1d4&parentnode=38066aee-c535-4e58-b502-a0f7fdd14c2d",
+        thumbnail:
+          "https://experimentoindia.prathamopenschool.org/content/thumbnails/ac64a21d-47dc-4501-bc48-8c8e83d8f1d4.jpg", // First frame/thumbnail
       },
     ],
   },

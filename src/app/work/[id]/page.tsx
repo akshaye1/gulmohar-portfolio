@@ -1,3 +1,5 @@
+"use client";
+
 import { projects } from "@/lib/data";
 import type { Project } from "@/types";
 import { notFound } from "next/navigation";
@@ -7,30 +9,15 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { CalendarDays, Briefcase, Settings2 } from "lucide-react";
+import React, { useState, use } from "react";
 
 interface ProjectDetailPageProps {
   params: { id: string };
 }
 
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }));
-}
-
-export async function generateMetadata({ params }: ProjectDetailPageProps) {
-  const project = projects.find((p) => p.id === params.id);
-  if (!project) {
-    return { title: "Project Not Found" };
-  }
-  return {
-    title: `${project.title} - Gulmohar Production`,
-    description: project.description,
-  };
-}
-
 export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const project = projects.find((p) => p.id === params.id);
+  const { id } = React.use(params);
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     notFound();
@@ -49,173 +36,48 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
       {/* Render showcase videos if available, otherwise fallback to old cards */}
       {project.showcaseVideos ? (
-        <div className="grid md:grid-cols-2 gap-8">
-          {project.showcaseVideos.map((video, idx) => {
-            const isInstagram = video.videoUrl.includes("instagram.com");
-            return (
-              <Card
-                key={video.name}
-                className={`relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl group${
-                  project.showcaseVideos &&
-                  project.showcaseVideos.length % 2 !== 0 &&
-                  idx === project.showcaseVideos.length - 1
-                    ? " md:col-span-2"
-                    : ""
-                }`}
-              >
-                <CardContent className="p-0">
-                  <div className="w-full h-full overflow-hidden">
-                    <Image
-                      src={video.thumbnail}
-                      alt={video.name}
-                      layout="fill"
-                      objectFit="cover"
-                      priority
-                      className="transition-transform duration-700 ease-in-out group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center transition-opacity">
-                    <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg group-hover:opacity-0 transition-opacity">
-                      {video.name}
-                    </span>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      {isInstagram ? (
-                        <a
-                          href={video.videoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block px-6 py-3 bg-white/90 text-black font-semibold rounded-lg shadow-lg hover:bg-white"
-                        >
-                          View on Instagram
-                        </a>
-                      ) : (
-                        <VideoPlayerModal
-                          videoUrl={video.videoUrl}
-                          title={video.name}
-                        />
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+        <CarouselGrid
+          cards={project.showcaseVideos.map((video) => ({
+            name: video.name,
+            thumbnail: video.thumbnail,
+            videoUrl: video.videoUrl,
+          }))}
+        />
       ) : (
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Card 1: house interior */}
-          <Card className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl group">
-            <CardContent className="p-0">
-              <div className="w-full h-full overflow-hidden">
-                <Image
-                  src="https://img.youtube.com/vi/TUTPyfurDDM/maxresdefault.jpg"
-                  alt="house interior"
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                  className="transition-transform duration-700 ease-in-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity">
-                <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg group-hover:opacity-0 transition-opacity">
-                  house interior
-                </span>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <VideoPlayerModal
-                    videoUrl="https://youtu.be/TUTPyfurDDM?si=7UdnhJhsRJmHg0mJ"
-                    title="house interior"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Card 2: Blue cabinet interior */}
-          <Card className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl group">
-            <CardContent className="p-0">
-              <div className="w-full h-full overflow-hidden">
-                <Image
-                  src="https://img.youtube.com/vi/c6DIHphJCsw/maxresdefault.jpg"
-                  alt="Blue cabinet interior"
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                  className="transition-transform duration-700 ease-in-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity">
-                <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg group-hover:opacity-0 transition-opacity">
-                  Blue cabinet interior
-                </span>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <VideoPlayerModal
-                    videoUrl="https://youtu.be/c6DIHphJCsw?si=4sdVuGzgr2hXbBYs"
-                    title="Blue cabinet interior"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Card 3: Juhu interior */}
-          <Card className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl group">
-            <CardContent className="p-0">
-              <div className="w-full h-full overflow-hidden">
-                <Image
-                  src="https://img.youtube.com/vi/_0r6NR6ohBM/maxresdefault.jpg"
-                  alt="Juhu interior"
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                  className="transition-transform duration-700 ease-in-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity">
-                <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg group-hover:opacity-0 transition-opacity">
-                  Juhu interior
-                </span>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <VideoPlayerModal
-                    videoUrl="https://youtu.be/_0r6NR6ohBM?si=pCVvU9qmRv-ZbUZ9"
-                    title="Juhu interior"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Card 4: Jeevan sathi apartment */}
-          <Card className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl group">
-            <CardContent className="p-0">
-              <div className="w-full h-full overflow-hidden">
-                <Image
-                  src="https://img.youtube.com/vi/wJQbF1B1PjU/maxresdefault.jpg"
-                  alt="Jeevan sathi apartment"
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                  className="transition-transform duration-700 ease-in-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity">
-                <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg group-hover:opacity-0 transition-opacity">
-                  Jeevan sathi apartment
-                </span>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <VideoPlayerModal
-                    videoUrl="https://youtu.be/wJQbF1B1PjU?si=txYHQ0KD-jzgdnja"
-                    title="Jeevan sathi apartment"
-                  />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <CarouselGrid
+          cards={[
+            {
+              name: "Nickelodeon",
+              thumbnail:
+                "https://img.youtube.com/vi/NEeHGQWsloI/maxresdefault.jpg",
+              videoUrl: "https://youtu.be/NEeHGQWsloI?si=amh5mGMhtTL3jPEj",
+            },
+            {
+              name: "house interior",
+              thumbnail:
+                "https://img.youtube.com/vi/TUTPyfurDDM/maxresdefault.jpg",
+              videoUrl: "https://youtu.be/TUTPyfurDDM?si=7UdnhJhsRJmHg0mJ",
+            },
+            {
+              name: "Blue cabinet interior",
+              thumbnail:
+                "https://img.youtube.com/vi/c6DIHphJCsw/maxresdefault.jpg",
+              videoUrl: "https://youtu.be/c6DIHphJCsw?si=4sdVuGzgr2hXbBYs",
+            },
+            {
+              name: "Juhu interior",
+              thumbnail:
+                "https://img.youtube.com/vi/_0r6NR6ohBM/maxresdefault.jpg",
+              videoUrl: "https://youtu.be/_0r6NR6ohBM?si=pCVvU9qmRv-ZbUZ9",
+            },
+            {
+              name: "Jeevan sathi apartment",
+              thumbnail:
+                "https://img.youtube.com/vi/wJQbF1B1PjU/maxresdefault.jpg",
+              videoUrl: "https://youtu.be/wJQbF1B1PjU?si=txYHQ0KD-jzgdnja",
+            },
+          ]}
+        />
       )}
 
       <Separator />
@@ -276,6 +138,125 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           </CardContent>
         </Card>
       </div>
+    </div>
+  );
+}
+
+// CarouselGrid component
+type CarouselCard = {
+  name: string;
+  thumbnail: string;
+  videoUrl: string;
+};
+
+interface CarouselGridProps {
+  cards: CarouselCard[];
+}
+
+function CarouselGrid({ cards }: CarouselGridProps) {
+  const [page, setPage] = useState(0);
+  const cardsPerPage = 4;
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
+  const currentCards = cards.slice(
+    page * cardsPerPage,
+    (page + 1) * cardsPerPage
+  );
+
+  return (
+    <div>
+      <div className="grid md:grid-cols-2 gap-8">
+        {currentCards.map((card: CarouselCard) => (
+          <Card
+            key={card.name}
+            className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl group"
+          >
+            <CardContent className="p-0">
+              <div className="w-full h-full overflow-hidden">
+                <Image
+                  src={card.thumbnail}
+                  alt={card.name}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  className="transition-transform duration-700 ease-in-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity">
+                <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg group-hover:opacity-0 transition-opacity">
+                  {card.name}
+                </span>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <VideoPlayerModal
+                    videoUrl={card.videoUrl}
+                    title={card.name}
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-8 gap-4 items-center">
+          <button
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={page === 0}
+            className="rounded-full bg-white/80 hover:bg-primary/80 text-primary hover:text-white shadow-lg w-10 h-10 flex items-center justify-center transition disabled:opacity-40 disabled:cursor-not-allowed border border-primary"
+            aria-label="Previous"
+          >
+            <span className="sr-only">Previous</span>
+            <svg
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setPage(idx)}
+                className={`w-3 h-3 rounded-full border border-primary transition-all duration-200 ${
+                  page === idx ? "bg-primary" : "bg-white"
+                }`}
+                aria-label={`Go to page ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            disabled={page === totalPages - 1}
+            className="rounded-full bg-white/80 hover:bg-primary/80 text-primary hover:text-white shadow-lg w-10 h-10 flex items-center justify-center transition disabled:opacity-40 disabled:cursor-not-allowed border border-primary"
+            aria-label="Next"
+          >
+            <span className="sr-only">Next</span>
+            <svg
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
